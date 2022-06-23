@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>taptap</key>
+    <dict>
+        <key>client_id</key>
+        <string>填写游戏的TapClientId</string>
+    </dict>
+    
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App需要您的同意,才能访问相册,游戏可以自行修改文案</string>
+    <key>NSCameraUsageDescription</key>
+    <string>App需要您的同意,才能访问相机,游戏可以自行修改文案</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>App需要您的同意,才能访问麦克风,游戏可以自行修改文案</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>想要获取IDFA,游戏可以自行修改文案,如果没使用IDFA,这个Key和Value都可以删除</string>
+</dict>
+</plist>

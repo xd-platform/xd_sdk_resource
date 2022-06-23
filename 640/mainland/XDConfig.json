@@ -1,0 +1,30 @@
+{
+    "region_type":"CN",  //固定值
+    "bundle_id":"xxx",   //iOS bundleId (安卓不会用到这个属性)
+    "client_id":"xxx",   //XDSDK Client ID
+    "app_id":"xxx",
+    "idfa_enabled":false, //要使用idfa 就改为true 
+    "game_name":"xxx",
+    "report_url":"https://www.xd.com/service",
+    "logout_url":"xxx",
+    "web_pay_url": "xxxx",
+    "tapsdk":{
+        "client_id":"xxx", //Tap Client ID
+        "client_token":"xxx",
+        "server_url":"xxx",
+        "db_config":{
+            "enable":true,
+            "channel":"xxx",
+            "game_version":"xxx"
+        },
+        "permissions":[
+            "public_profile",
+            "user_friends"
+        ]
+    },
+    "logos":["https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
+        "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
+        "https://res.xdcdn.net/TDS/Global/res/xd_logo.png"]
+}
+
+//上面 xxx 都需要填写游戏的值，不清楚的可以找我们
