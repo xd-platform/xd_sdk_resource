@@ -4,6 +4,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.unity3d.player"
     xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!-- 可选 Android 11 相关配置，在手机安装有对应 App 的情况下，无法正常跳转外部 App 进行授权登录时请参考以下配置 -->    
+    <queries>
+  	  <!-- TapTap -->
+      	 <package android:name="com.taptap"/>
+   	 <package android:name="com.taptap.pad"/>
+   	 <package android:name="com.taptap.global"/>
+
+	 <!-- Facebook -->
+    	 <package android:name="com.facebook.katana"/>
+  	 <!-- Facebook 有端分享 -->
+ 	 <provider android:authorities="com.facebook.katana.provider.PlatformProvider"/>
+   	 <!-- Twitter -->
+   	 <package android:name="com.twitter.android"/>
+   	 <!-- LINE -->
+   	 <package android:name="jp.naver.line.android"/>
+   </queries>  
+
+
    
    <application>
         <!--可选：没用Facebook可以不加。 下面的 3 处 {游戏填写FBID}  需要改成游戏的 Facebook ID,  -->

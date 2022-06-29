@@ -13,7 +13,7 @@ public class XDGAndroidProcessor : IPostGenerateGradleAndroidProject{
 
         var parentFolder = Directory.GetParent(Application.dataPath)?.FullName;
 
-        //拷贝 google-services 可选
+        //拷贝 google-services 可选，需要用安卓Firebase就需要配置这个文件
         var googleJsonPath = parentFolder + "/Assets/Plugins/Android/google-services.json";
         if (File.Exists(googleJsonPath)){
             Debug.Log("拷贝谷歌 google-services");
@@ -27,7 +27,7 @@ public class XDGAndroidProcessor : IPostGenerateGradleAndroidProject{
         var launcherGradle = projectPath + "/launcher/build.gradle";
         var unityLibraryGradle = projectPath + "/unityLibrary/build.gradle";
 
-        //apply plugin 可根据需要添加或删除
+        //安卓没有Firebase的话可以删除这块配置
         if (File.Exists(launcherGradle)){
             Debug.Log("编辑 launcherGradle");
             var writerHelper = new XD.SDK.Common.Editor.XDGScriptHandlerProcessor(launcherGradle);
@@ -37,7 +37,8 @@ public class XDGAndroidProcessor : IPostGenerateGradleAndroidProject{
             ");
         }
 
-        //classpath 可根据需要添加或删除
+        
+         //安卓没有Firebase的话可以删除这块配置
         if (File.Exists(baseProjectGradle)){
             Debug.Log("编辑 baseProjectGradle");
             var writerHelper = new XD.SDK.Common.Editor.XDGScriptHandlerProcessor(baseProjectGradle);
@@ -53,7 +54,7 @@ public class XDGAndroidProcessor : IPostGenerateGradleAndroidProject{
 }");
         }
 
-        //implementation 可根据需要添加或删除
+        //implementation 可根据需要添加或删除，没用Firebase时可以把前面四个firebase,google相关的删了，不会影响谷歌登录
         if (File.Exists(unityLibraryGradle)){
             Debug.Log("编辑 unityLibraryGradle");
             var writerHelper = new XD.SDK.Common.Editor.XDGScriptHandlerProcessor(unityLibraryGradle);
