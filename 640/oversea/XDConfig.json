@@ -1,96 +1,80 @@
 {
-    "region_type":"Global", //固定值
-    "bundle_id":"xxx",      //iOS  bundleId
-    "client_id":"xxx",      //XDSDK Client ID
-    "app_id":"xxx",
-    "idfa_enabled":false,  //需要使用idfa 就改为true
-    "game_name":"xxx",
-    "report_url":"https://tds.d1ds4p8wk7q4rf.amplifyapp.com?client_id={{client_id}}&access_token={{access_token}}&user_id={{user_id}}&role_id={{role_id}}&role_name={{role_name}}&region={{region}}_{{pt}}&server_id={{server_id}}&sdk_ver={{sdk_ver}}&sdk_lang={{sdk_lang}}&app_ver={{app_ver}}&app_ver_code={{app_ver_code}}&res={{res}}&cpu={{cpu}}&mem={{mem}}&pt={{pt}}&os={{os}}&brand={{brand}}&mod={{mod}}&game_name={{game_name}}", //固定格式
-    "logout_url":"xxx",
-    "web_pay_url": "xxx",
-    "tapsdk":{
-        "client_id":"xxx",  //Tap Client ID
-        "client_token":"xxx",
-        "server_url":"xxx",
-        "db_config":{
-            "enable":true,
-            "channel":"xxx",
-            "game_version":"xxx"
-        },
-        "permissions":[
-            "public_profile",
-            "user_friends"
-        ]
+  "client_id": "xxx",  // 游戏在 XD 平台申请的 XD CLient ID，必填
+  "region_type": "CN", //国内:CN, 海外:Global  固定值
+  "app_id": "xxx",     //申请XD Client ID后才有这个值,XD后台给的
+  "bundle_id":"xxx",   //iOS的bundleId，安卓用不到
+  "idfa_enabled":false, //iOS IDFA用，需要开启就true,成功花成功后会弹框
+  "tapsdk": {
+    "client_id": "xxx", // 游戏申请的 TapSDK client ID 配置
+    "client_token": "xxx", // 游戏申请的 TapSDK client token 配置
+    "server_url": "xxx", // 游戏在 DC 后台配置的 server url
+    "db_config": {
+      "enable": true, // 是否开启内置 TapDB 埋点
+      "channel": "TapTap", // TapDB 统计渠道
+      "game_version": "1.xxx.xx" // 游戏版本号，会统计到 TapDB 中
     },
-    "logos":["https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
-        "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
-        "https://res.xdcdn.net/TDS/Global/res/xd_logo.png"],
-
-    "facebook":{//可选，没有可以不加，需要的话改为游戏的参数，现在是demo的参数 
-        "app_id":"333676195299012",
-        "client_token":"52372eb46fd7343e588160c51ca0955d",
-        "permissions":[
-            "public_profile",
-            "user_friends"
-        ]
-    },
-    "line":{//可选，没有可以不加，需要的话改为游戏的参数，现在是demo的参数  
-        "channel_id":"1655275943"
-    },
-    "twitter":{//可选，没有可以不加，需要的话改为游戏的参数，现在是demo的参数  
-        "consumer_key":"feOTAapnuXNFngQ2LktBnCpeF",
-        "consumer_secret":"zqkP0Mn9pmxypZ9dwFVbCZbQsxVT9REHNWWtTPEp8zIgOsB84l"
-    },
-    "google":{//可选，没有可以不加，需要的话改为游戏的参数，现在是demo的参数  
-        "CLIENT_ID":"888194877532-08sa8mvbgoqb54a605miomb9um2jqfab.apps.googleusercontent.com",
-        "REVERSED_CLIENT_ID":"com.googleusercontent.apps.888194877532-08sa8mvbgoqb54a605miomb9um2jqfab",
-        "API_KEY":"AIzaSyCfWsuovVG6qjqEKU4l0ZnM356itqB0_Lg",
-        "GCM_SENDER_ID":"888194877532",
-        "PLIST_VERSION":1,
-        "BUNDLE_ID":"com.xd.sdkdemo1",
-        "PROJECT_ID":"tds-xdg-demo-5ab65",
-        "STORAGE_BUCKET":"tds-xdg-demo-5ab65.appspot.com",
-        "IS_ADS_ENABLED":false,
-        "IS_ANALYTICS_ENABLED":false,
-        "IS_APPINVITE_ENABLED":true,
-        "IS_GCM_ENABLED":true,
-        "IS_SIGNIN_ENABLED":true,
-        "GOOGLE_APP_ID":"1:888194877532:ios:73d3ec00a6cf3926fcfe99",
-        "DATABASE_URL":"https://tds-xdg-demo-5ab65.firebaseio.com"
-    },
-    "adjust":{//可选，没有可以不加，需要的话改为游戏的参数，现在是demo的参数  
-        "app_token":"44y4ryktle4g",
-        "events": [
-            {
-                "event_name": "Server Check",
-                "token": "ail8v6"
-            },
-            {
-                "event_name": "charater create",
-                "token": "rt19op"
-            },
-            {
-                "event_name": "Change Job quest end",
-                "token": "k5g4pt"
-            },
-            {
-                "event_name": "First Purchase User",
-                "token": "ymeavj"
-            },
-            {
-                "event_name": "In App Purchase Revenue",
-                "token": "x0sykq"
-            },
-            {
-                "event_name": "TDSG_ADJ_REVENUE",
-                "token": "demotesttoken"
-            }
-        ]
-    },
-    "appsflyer":{//可选，没有可以不加，需要的话改为游戏的参数，现在是demo的参数  
-        "app_id":"1377060625",
-        "dev_key":"FLZT4V2Z3tSqCPtHbRwXNo"
-    }
+    "permissions": [ // TapTap 登录所需要的权限配置，默认只有 public_profile 权限
+      "public_profile",
+      "user_friends"
+    ]
+  },
+  "logout_url": "xxxx", // 账号注销访问链接，否则打开注销页面空白
+  "report_url": "https://tds.d1ds4p8wk7q4rf.amplifyapp.com?client_id={{client_id}}&access_token={{access_token}}&user_id={{user_id}}&role_id={{role_id}}&role_name={{role_name}}&region={{region}}_{{pt}}&server_id={{server_id}}&sdk_ver={{sdk_ver}}&sdk_lang={{sdk_lang}}&app_ver={{app_ver}}&app_ver_code={{app_ver_code}}&res={{res}}&cpu={{cpu}}&mem={{mem}}&pt={{pt}}&os={{os}}&brand={{brand}}&mod={{mod}}&game_name={{game_name}}", // 客服系统访问链接，固定格式
+  "web_pay_url": "xxx", // Android 网页支付访问链接
+  "logos": [ // SDK UI 登录弹框界面底部的联名 logo 显示的图片地址
+    "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
+    "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
+    "https://res.xdcdn.net/TDS/Global/res/xd_logo.png"
+  ],
+  "facebook": { // Facebook 配置，可选，没有可以删除配置
+    "app_id": "xxx",
+    "client_token": "xxx",
+    "permissions": [ // Facebook 登录授权权限配置，默认只有 public_profile 配置
+      "public_profile",
+      "user_friends"
+    ]
+  },
+  "line": { // LINE 登录授权配置，可选，没有可以删除配置
+    "channel_id": "xxx"
+  },
+  "twitter": { // Twitter 登录授权配置，可选，没有可以删除配置
+    "consumer_key": "xxx",
+    "consumer_secret": "xxx"
+  },
+  "google": { // Google 登录授权配置 (Firebase 自定义埋点事件会以此配置是否配置作为开关)，可选，没有可以删除配置
+    "CLIENT_ID": "xxx.apps.googleusercontent.com",
+    "CLIENT_ID_FOR_ANDROID": "xxx.apps.googleusercontent.com", // Android Google 登录所需的 client ID
+    "REVERSED_CLIENT_ID": "com.googleusercontent.apps.xxx",
+    "API_KEY": "xxx",
+    "GCM_SENDER_ID": "xxx",
+    "PLIST_VERSION": 1,
+    "BUNDLE_ID": "com.xd.xxx",
+    "PROJECT_ID": "xxx",
+    "STORAGE_BUCKET": "xxx",
+    "IS_ADS_ENABLED": false,
+    "IS_ANALYTICS_ENABLED": false,
+    "IS_APPINVITE_ENABLED": true,
+    "IS_GCM_ENABLED": true,
+    "IS_SIGNIN_ENABLED": true,
+    "GOOGLE_APP_ID": "xxx",
+    "DATABASE_URL": "xxx"
+  },
+  "adjust": { // Adjust 埋点平台配置，，可选，没有可以删除配置
+    "app_token": "44y4ryktle4g",
+    "events": [
+      {
+        "event_name": "eventName1",
+        "token": "token1"
+      },
+      {
+        "event_name": "eventName2",
+        "token": "token2"
+      },
+      ...
+    ]
+  },
+  "appsflyer": { // AppsFlyer 埋点平台配置，可选，没有可以删除配置
+    "app_id": "xxx",
+    "dev_key": "xxx"
+  }
 }
-
-//上面 xxx 都需要填写游戏的值，不清楚的可以找我们

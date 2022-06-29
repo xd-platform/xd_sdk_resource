@@ -1,30 +1,29 @@
 {
-    "region_type":"CN",  //固定值
-    "bundle_id":"xxx",   //iOS bundleId (安卓不会用到这个属性)
-    "client_id":"xxx",   //XDSDK Client ID
-    "app_id":"xxx",
-    "idfa_enabled":false, //要使用idfa 就改为true 
-    "game_name":"xxx",
-    "report_url":"https://www.xd.com/service",
-    "logout_url":"xxx",
-    "web_pay_url": "xxxx",
-    "tapsdk":{
-        "client_id":"xxx", //Tap Client ID
-        "client_token":"xxx",
-        "server_url":"xxx",
-        "db_config":{
-            "enable":true,
-            "channel":"xxx",
-            "game_version":"xxx"
-        },
-        "permissions":[
-            "public_profile",
-            "user_friends"
-        ]
+  "client_id": "xxx",  // 游戏在 XD 平台申请的 XD CLient ID，必填
+  "region_type": "CN", //国内:CN, 海外:Global  固定值
+  "app_id": "xxx",     //申请XD Client ID后才有这个值,XD后台给的
+  "bundle_id":"xxx",   //iOS的bundleId，安卓用不到
+  "idfa_enabled":false, //iOS IDFA用，需要开启就true,成功花成功后会弹框
+  "tapsdk": {
+    "client_id": "xxx", // 游戏申请的 TapSDK client ID 配置
+    "client_token": "xxx", // 游戏申请的 TapSDK client token 配置
+    "server_url": "xxx", // 游戏在 DC 后台配置的 server url
+    "db_config": {
+      "enable": true, // 是否开启内置 TapDB 埋点
+      "channel": "TapTap", // TapDB 统计渠道
+      "game_version": "1.xxx.xx" // 游戏版本号，会统计到 TapDB 中
     },
-    "logos":["https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
-        "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
-        "https://res.xdcdn.net/TDS/Global/res/xd_logo.png"]
+    "permissions": [ // TapTap 登录所需要的权限配置，默认只有 public_profile 权限
+      "public_profile",
+      "user_friends"
+    ]
+  },
+  "logout_url": "xxxx", // 账号注销访问链接，否则打开注销页面空白
+  "report_url": "https://tds.d1ds4p8wk7q4rf.amplifyapp.com?client_id={{client_id}}&access_token={{access_token}}&user_id={{user_id}}&role_id={{role_id}}&role_name={{role_name}}&region={{region}}_{{pt}}&server_id={{server_id}}&sdk_ver={{sdk_ver}}&sdk_lang={{sdk_lang}}&app_ver={{app_ver}}&app_ver_code={{app_ver_code}}&res={{res}}&cpu={{cpu}}&mem={{mem}}&pt={{pt}}&os={{os}}&brand={{brand}}&mod={{mod}}&game_name={{game_name}}", // 客服系统访问链接，固定格式
+  "web_pay_url": "xxx", // Android 网页支付访问链接
+  "logos": [ // SDK UI 登录弹框界面底部的联名 logo 显示的图片地址
+    "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
+    "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
+    "https://res.xdcdn.net/TDS/Global/res/xd_logo.png"
+  ]
 }
-
-//上面 xxx 都需要填写游戏的值，不清楚的可以找我们
