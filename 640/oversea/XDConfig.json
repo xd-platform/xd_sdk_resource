@@ -1,6 +1,6 @@
 {
   "client_id": "xxx",  // 游戏在 XD 平台申请的 XD CLient ID，必填
-  "region_type": "CN", //国内:CN, 海外:Global  固定值
+  "region_type": "Global", //国内:CN, 海外:Global  固定值
   "app_id": "xxx",     //申请XD Client ID后才有这个值,XD后台给的
   "bundle_id":"xxx",   //iOS的bundleId，安卓用不到
   "idfa_enabled":false, //iOS IDFA用，需要开启就true,成功花成功后会弹框
