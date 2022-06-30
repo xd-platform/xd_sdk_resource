@@ -19,7 +19,7 @@
     ]
   },
   "logout_url": "xxxx", // 账号注销访问链接，否则打开注销页面空白
-  "report_url": "https://tds.d1ds4p8wk7q4rf.amplifyapp.com?client_id={{client_id}}&access_token={{access_token}}&user_id={{user_id}}&role_id={{role_id}}&role_name={{role_name}}&region={{region}}_{{pt}}&server_id={{server_id}}&sdk_ver={{sdk_ver}}&sdk_lang={{sdk_lang}}&app_ver={{app_ver}}&app_ver_code={{app_ver_code}}&res={{res}}&cpu={{cpu}}&mem={{mem}}&pt={{pt}}&os={{os}}&brand={{brand}}&mod={{mod}}&game_name={{game_name}}", // 客服系统访问链接，固定格式
+  "report_url": "xxxx", // 客服系统访问链接
   "web_pay_url": "xxx", // Android 网页支付访问链接
   "logos": [ // SDK UI 登录弹框界面底部的联名 logo 显示的图片地址
     "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
