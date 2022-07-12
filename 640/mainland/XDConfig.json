@@ -18,8 +18,8 @@
       "user_friends"
     ]
   },
-  "logout_url": "xxxx", // 账号注销访问链接，否则打开注销页面空白
-  "report_url": "xxxx", // 客服系统访问链接
+  "logout_url": "https://logout-xdsdk.xd.cn/", // 账号注销访问链接，否则打开注销页面空白
+  "report_url": "https://www.taptap.com/xxxx", // 客服系统访问链接, 游戏tap网站反馈页面
   "web_pay_url": "xxx", // Android 网页支付访问链接
   "logos": [ // SDK UI 登录弹框界面底部的联名 logo 显示的图片地址
     "https://res.xdcdn.net/TDS/Global/res/xd_logo.png",
